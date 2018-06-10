@@ -5,7 +5,7 @@
         <h2>烦恼提交</h2>
         <p class="lead">你可以在这里写下你的烦恼</p>
       </div>
-
+      <hr>
       <div class="py-3 jumbotron">
         <div>
           <form class="needs-validation" method="post" action="">
@@ -33,13 +33,15 @@
             <div class="row">
               <div class="col-md">
               	<h5 class="mb-3">烦恼内容</h5>
-                <textarea class="form-control" name="content" placeholder="" value="" required></textarea>
+                <textarea class="form-control" name="content" placeholder="" value="" rows='10' required></textarea>
                 <div class="invalid-feedback">
                   请填写正确的内容！
                 </div>
               </div>
             </div>
-            <hr class="mb-4">
+            <br>
+            <hr>
+            <br>
             <button class="btn btn-primary btn-lg btn-block" type="submit">确认提交</button>
           </form>
         </div>
