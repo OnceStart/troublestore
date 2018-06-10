@@ -19,5 +19,6 @@ from home import views as home_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', home_views.home)
+    url(r'^$', home_views.home),
+    url(r'^trouble_submit/$',home_views.troublesubmit),
 ]
