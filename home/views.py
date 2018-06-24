@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render, render_to_response, HttpResponse, HttpResponseRedirect
 from models import troubles
 
 # Create your views here.
@@ -16,4 +16,14 @@ def troublesubmit(request):
 		trouble.title = request.POST.get('title', 'no title')
 		trouble.content = request.POST.get('content', 'no content')
 		trouble.save()
+		return HttpResponseRedirect(r'../trouble_display/'+str(trouble.pk)+'/?submit=1')
 	return render(request, 'trouble_submit.html')
+
+def trouble_display(request, trouble_id):
+	try:
+		trouble = troubles.objects.get(pk = trouble_id)
+	except:
+		return render(request, 'trouble_display.html')
+
+	submit = request.GET.get('submit')
+	return render(request, 'trouble_display.html', {'trouble':trouble, 'submit':submit})

@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home_views.home),
     url(r'^trouble_submit/$',home_views.troublesubmit),
+    url(r'^trouble_display/(?P<trouble_id>\d+)/$', home_views.trouble_display),
 ]
